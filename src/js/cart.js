@@ -1,13 +1,14 @@
 import { getLocalStorage } from "./utils.mjs";
 
-function renderCartContents() {
-  const cartItems = getLocalStorage("so-cart");
-  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-  document.querySelector(".product-list").innerHTML = htmlItems.join("");
+function getCartContents() {
+  let markup = '';
+  const cartItems = getLocalStorage('so-cart') || []; // get cart items or initialize an empty array
+  const htmlItems = Array.isArray(cartItems) ? cartItems.map((item) => renderCartItem(item)) : [];
+  document.querySelector('.product-list').innerHTML = htmlItems.join('');
 }
 
-function cartItemTemplate(item) {
-  const newItem = `<li class="cart-card divider">
+function renderCartItem(item) {
+const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
       src="${item.Image}"
@@ -21,8 +22,9 @@ function cartItemTemplate(item) {
   <p class="cart-card__quantity">qty: 1</p>
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
-
+  console.log(newItem);
   return newItem;
 }
 
-renderCartContents();
+getCartContents();
+
