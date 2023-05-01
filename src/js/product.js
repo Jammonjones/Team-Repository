@@ -21,7 +21,7 @@ async function init() {
 function addToCart(e) {
   const productId = e.target.dataset.id;
   const product = products.find((item) => item.Id === productId);
-  // console.log(typeof cartItems);
+ console.log(typeof cartItems);
   if (!Array.isArray(cartItems)) {
     cartItems = [];
   }
