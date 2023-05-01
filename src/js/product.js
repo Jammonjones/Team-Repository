@@ -31,7 +31,7 @@ function addToCart(e) {
   console.log("Added to cart:", product);
 }
 
-// retrieve data from localstorage
+// retrieve data from localstorage.
 function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
