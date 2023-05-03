@@ -2,7 +2,7 @@ import { getLocalStorage } from "./utils.mjs";
 
 function getCartContents() {
   let markup = '';
-  const cartItems = getLocalStorage('so-cart') || []; // get cart items or initialize an empty array
+  const cartItems = getLocalStorage('so-cart') || []; // get cart items or initialize an empty array.
   const htmlItems = Array.isArray(cartItems) ? cartItems.map((item) => renderCartItem(item)) : [];
   document.querySelector('.product-list').innerHTML = htmlItems.join('');
 }

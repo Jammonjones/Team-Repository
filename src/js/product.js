@@ -15,14 +15,13 @@ function convertToJson(res) {
 async function init() {
   products = await fetch("../json/tents.json").then(convertToJson);
   document.getElementById("addToCart").addEventListener("click", addToCart);
-  console.log(products);
 }
 
 // add to cart button event handler
 function addToCart(e) {
   const productId = e.target.dataset.id;
   const product = products.find((item) => item.Id === productId);
-  console.log(typeof cartItems);
+ console.log(typeof cartItems);
   if (!Array.isArray(cartItems)) {
     cartItems = [];
   }
