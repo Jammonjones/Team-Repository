@@ -1,9 +1,13 @@
 let products = [];
 let cartItems = getLocalStorage("so-cart") || [];
-import { setLocalStorage } from "./utils.mjs";
-import { findProductById } from "productData.mjs";
-import productDetails from "productDetails.mjs"
+import { setLocalStorage, getParam } from "./utils.mjs";
+import { findProductById } from "./productData.mjs";
+import productDetails from "./productDetails.mjs"
 
+// build the product page
+const productId = getParam("product");
+
+// Converts a http response object to a json object
 function convertToJson(res) {
   if (res.ok) {
     return res.json();
@@ -27,7 +31,6 @@ function getLocalStorage(key) {
 // call init function to fetch data and add event listener
 init();
 
-// Test import pathway
-console.log(getParam("product"));
+
 
 
