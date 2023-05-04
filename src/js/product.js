@@ -6,6 +6,7 @@ import productDetails from "./productDetails.mjs"
 
 // build the product page
 const productId = getParam("product");
+productDetails(productId);
 
 // Converts a http response object to a json object
 function convertToJson(res) {
