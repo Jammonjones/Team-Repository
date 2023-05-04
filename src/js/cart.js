@@ -1,14 +1,16 @@
 import { getLocalStorage } from "./utils.mjs";
 
 function getCartContents() {
-  let markup = '';
-  const cartItems = getLocalStorage('so-cart') || []; // get cart items or initialize an empty array
+  // which value should markup have???
+  let markup = "";
+  const cartItems = getLocalStorage("so-cart") || []; // get cart items or initialize an empty array
   const htmlItems = Array.isArray(cartItems) ? cartItems.map((item) => renderCartItem(item)) : [];
-  document.querySelector('.product-list').innerHTML = htmlItems.join('');
+  document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
 
 function renderCartItem(item) {
-const newItem = `<li class="cart-card divider">
+const newItem = 
+`<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
       src="${item.Image}"
