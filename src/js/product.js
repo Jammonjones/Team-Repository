@@ -2,7 +2,12 @@ let products = [];
 let cartItems = getLocalStorage("so-cart") || [];
 import { setLocalStorage } from "./utils.mjs";
 import { findProductById } from "./productData.mjs";
-import {getParam} from "./utils.mjs";
+import {setLocalStorage, getParam} from "./utils.mjs";
+
+// copied from example code
+// this should test findProductbyId and getParam functions
+const productID = getParam("product");
+console.log(findProductById(productID));
 
 function convertToJson(res) {
   if (res.ok) {
