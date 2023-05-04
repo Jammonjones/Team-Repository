@@ -4,3 +4,16 @@
 // what it needs to function, but very opaque about the details of how it accomplishes 
 // it's work. This means in part that we should only expose as much as we need to for 
 // it to work.
+export default productDetails(productId)
+{
+
+}
+
+import {addToCart} from "./product.js";
+
+function renderProductDetails()
+{
+
+}
+
+ let productData = 0;
