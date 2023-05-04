@@ -21,3 +21,8 @@ export function setClick(selector, callback) {
   });
   qs(selector).addEventListener("click", callback);
 }
+// get url parameter using parameter key
+export function getParam(p){
+  let parameters = new URLSearchParams(window.location.search);
+  return parameters.get(p);
+}

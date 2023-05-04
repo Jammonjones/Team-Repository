@@ -1,6 +1,6 @@
 let products = [];
 let cartItems = getLocalStorage("so-cart") || [];
-import { setLocalStorage } from "./utils.mjs";
+import { setLocalStorage, getParam } from "./utils.mjs";
 import { findProductById } from "./productData.mjs";
 
 function convertToJson(res) {
@@ -38,3 +38,9 @@ function getLocalStorage(key) {
 
 // call init function to fetch data and add event listener
 init();
+
+// test getParams function
+let proddId = getParam("product");
+console.log(proddId);
+let produtt = findProductById(proddId);
+console.log(produtt);
