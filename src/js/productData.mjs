@@ -15,6 +15,7 @@ function convertToJson(res) {
 export function getData(category = "tents") {
   return fetch(`../json/${category}.json`)
     .then(convertToJson)
+    // arrow function
     .then((data) => data);
 }
 
@@ -22,5 +23,6 @@ export function getData(category = "tents") {
 // async/wait functions are easier to write than .then() promises
 export async function findProductById(id) {
   const products = await getData();
+  // arrow function
   return products.find((item) => item.Id === id);
 }
