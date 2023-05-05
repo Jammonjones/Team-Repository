@@ -1,6 +1,7 @@
 import { getLocalStorage } from "./utils.mjs";
 
 function getCartContents() {
+
   let markup = '';
   const cartItems = getLocalStorage('so-cart') || []; // get cart items or initialize an empty array.
   const htmlItems = Array.isArray(cartItems) ? cartItems.map((item) => renderCartItem(item)) : [];
@@ -8,7 +9,7 @@ function getCartContents() {
 }
 
 function renderCartItem(item) {
-const newItem = `<li class="cart-card divider">
+  const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
       src="${item.Image}"
@@ -27,4 +28,3 @@ const newItem = `<li class="cart-card divider">
 }
 
 getCartContents();
-
