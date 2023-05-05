@@ -1,12 +1,13 @@
 let products = [];
 let cartItems = getLocalStorage("so-cart") || [];
 import { findProductById } from "./productData.mjs";
-import {setLocalStorage, getParam} from "./utils.mjs";
+import { setLocalStorage, getParam } from "./utils.mjs";
+import productDetails from "./productDetails.mjs";
 
 // copied from example code
 // this should test findProductbyId and getParam functions
-const productID = getParam("product");
-console.log(findProductById(productID));
+const productId = getParam("product");
+productDetails(productId);
 
 function convertToJson(res) {
   if (res.ok) {
@@ -40,7 +41,6 @@ function addToCart(e) {
 function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
-
 
 // call init function to fetch data and add event listener
 init();
