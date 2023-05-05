@@ -18,3 +18,5 @@ export default defineConfig({
     },
   },
 });
+// Anytime we add or remove more .HTML files to the site 
+// we will need to update this config or the production version of our site will break!
