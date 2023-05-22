@@ -12,7 +12,7 @@ function convertToJson(res) {
 // the category defaults to tents 
 // so if we don't pass anything in
 // it will return tents
-export function getData(category = "tents") {
+export default function getData(category = "tents") {
   return fetch(`../json/${category}.json`)
     .then(convertToJson)
     // arrow function
