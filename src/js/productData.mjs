@@ -1,4 +1,5 @@
-const baseURL = import.meta.env.VITE_SERVER_URL
+// connect url here 
+const baseURL = "https://wdd330-backend.onrender.com";
 // small module
 // convertToJson is not exported meaning we won't
 // run it outside of this module
