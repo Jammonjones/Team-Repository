@@ -14,15 +14,16 @@ function convertToJson(res) {
 // the category defaults to tents 
 // so if we don't pass anything in
 // it will return tents
-async function getData(category) {
+export async function getData(category) {
   const response = await fetch(baseURL + `products/search/${category}`);
   const data = await convertToJson(response);
   return data.Result;
 }
 // findProductByID is easier to understand than getData
 // async/wait functions are easier to write than .then() promises
+
 export async function findProductById(id) {
-  const products = await getData();
-  // arrow function
-  return products.find((item) => item.Id === id);
+  const response = await fetch(baseURL + `product/${id}`);
+  const product = await convertToJson(response);
+  return product.Result;
 }
